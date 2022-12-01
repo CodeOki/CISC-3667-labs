@@ -9,7 +9,7 @@ public class PinMovement : MonoBehaviour {
     [SerializeField] float movement;
 	[SerializeField] GameObject player;
     [SerializeField] AudioSource audioPlayer;
-    // [SerializeField] GameObject scoreKeeper;
+    [SerializeField] ScoreScript Score;
 
     void Start() {
 
@@ -25,9 +25,7 @@ public class PinMovement : MonoBehaviour {
             movement = speed;
         }
         rigid.velocity = new Vector2(movement, 0);
-            /* if (scoreKeeper == null)
-            scoreKeeper = GameObject.Find("Game Events");
-            */
+            
         }
     void Update()
     {
@@ -40,11 +38,11 @@ public class PinMovement : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Enemy") {
-            GameObject.Find("Sound").GetComponent<ExplosionSound>().playAudio();
+            GameObject.Find("ScoreObj").GetComponent<ScoreScript>().AddScore();
+            GameObject.Find("Explosion").GetComponent<ExplosionSound>().playAudio();
             Destroy(gameObject);
             Destroy(collider.gameObject);
         }
-    // scoreKeeper.GetComponent<ScoreKeeper>().AddPoints(1);
         
     }
 }
