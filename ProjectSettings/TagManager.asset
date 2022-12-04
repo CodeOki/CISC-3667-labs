@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Enemy
   - audio
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -42,6 +43,12 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2497181199
+    locked: 0
+  - name: Player
+    uniqueID: 3801970831
+    locked: 0
+  - name: Foreground
+    uniqueID: 3153818429
     locked: 0
   - name: Default
     uniqueID: 0

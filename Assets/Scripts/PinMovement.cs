@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PinMovement : MonoBehaviour {
 
@@ -38,8 +39,10 @@ public class PinMovement : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Enemy") {
+        //  GameObject.Find("SpawnerObj").GetComponent<Spawner>().Spawn();
             GameObject.Find("ScoreObj").GetComponent<ScoreScript>().AddScore();
             GameObject.Find("Explosion").GetComponent<ExplosionSound>().playAudio();
+            GameObject.Find("NextLevel").GetComponent<NextLevelScript>().nextScene();
             Destroy(gameObject);
             Destroy(collider.gameObject);
         }

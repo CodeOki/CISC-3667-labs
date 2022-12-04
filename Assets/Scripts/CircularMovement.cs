@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CircularMovement : MonoBehaviour {
 
@@ -30,5 +31,10 @@ public class CircularMovement : MonoBehaviour {
 
 		if (angle >= 360f)
 			angle = 0f;
+
+		if (transform.localScale.x > 0.6f) {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			//Debug.Log(transform.localScale.x);
+		}
 	}
 }

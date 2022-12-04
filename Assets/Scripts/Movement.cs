@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
 	{
 		movement = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKey(KeyCode.Space) && !jumpPressed && isGrounded)
 			jumpPressed = true;
 
 		rigid.velocity = new Vector2(movement * speed, rigid.velocity.y);
