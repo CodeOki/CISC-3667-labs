@@ -32,9 +32,9 @@ public class CircularMovement : MonoBehaviour {
 		if (angle >= 360f)
 			angle = 0f;
 
-		if (transform.localScale.x > 0.6f) {
+		/*if (transform.localScale.x > 0.6f) {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-			//Debug.Log(transform.localScale.x);
-		}
+			Debug.Log(transform.localScale.x);
+		}*/
 	}
 }
